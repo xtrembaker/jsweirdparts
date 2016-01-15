@@ -4,10 +4,11 @@
  * and open the template in the editor.
  */
 
-describe("String Assert - 1", function() {
+describe("Comparison Assert - 1", function() {
   it("Compare two equal string", function() {
     expect("a" == "a").toBe(true);
   });
+  
   it("Compare two different string", function() {
     expect("a" == "b").toBe(false);
   });
@@ -20,11 +21,19 @@ describe("String Assert - 1", function() {
     expect(truthiness).toBe(true);
   });
   
+  it("Compare Number and 'Number'", function() {
+    var a = 3;
+    var b = Number(3);
+    expect(a === b).toBe(true);
+    var c = new Number(3);
+    expect(a === c).toBe(false);
+  });
+  
   it("Object", function() {
-      var truthiness = false;
-      if({}){
-          truthiness = true;
-      }
+    var truthiness = false;
+    if({}){
+        truthiness = true;
+    }
     expect(truthiness).toBe(true);
   });
   
